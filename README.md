@@ -1,4 +1,4 @@
-# RS31I — RISC-V RV32I Processor
+# RISC-V RV32I Processor
 
 A RISC-V RV32I CPU core implemented in SystemVerilog, built from scratch as a 
 learning project in digital hardware design.
