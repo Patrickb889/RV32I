@@ -2,21 +2,18 @@
 
 ## 1. Introduction
 ### 1.1 Purpose
-This document specifies the functional and non-functional requirements for an RV32I RISC-V instruction set simulator (ISS) implemented in software. It is intended to serve as a 
-reference for the developer during implementation and testing. The document covers the full scope of the simulator's required behaviour, interfaces, and quality constraints.
+This document covers the functional and non-functional requirements for my simulated RV32I RISC-V CPU and is intended to serve as my 
+reference during implementation and testing. The document covers the full scope of the simulations required behaviour, interfaces, and quality constraints.
 
 ### 1.2 Scope
-The scope of this project encompasses the full behavioural and interface requirements for a software-based RV32I instruction-set simulator. The simulator shall accept ELF32 binaries 
-compiled for the RISC-V 32-bit base integer ISA and execute them on a host machine without physical RISC-V hardware. It is intended as a learning and verification tool for understanding 
-CPU architecture and validating RV32I program behaviour.
+The scope of this project encompasses the full behavioural and interface requirements for an RV32I CPU. The simulator shall accept compiled ELF32 binaries and execute them on a host machine without physical RISC-V hardware. It is intended as a learning project for understanding CPU architecture and validating RV32I program behaviour.
+
 The following are explicitly out of scope: compressed instructions (RV32C), floating point extensions (RV32F/D), or any extension beyond the base RV32I instruction set, 
 privileged ISA features, hardware implementation, and multi-core or multi-hart execution. 
 
 ## 2. Description
 ### 2.1 Product Perspective
-The simulation is a standalone software tool that sits between the compilation toolchain and physical hardware in a typical RISC-V development workflow. It accepts ELF32 binaries 
-produced by a RISC-V cross-compiler and executes them on a host machine. It has no dependencies on physical RISC-V hardware and operates entirely 
-in software. The simulator runs in a Linux environment and outputs to the host terminal.
+The simulation sits between the compiler and physical hardware. You give it an ELF32 binary, and it executes entirely in software on your host machine, no physical RISC-V hardware needed. The simulator runs in a Linux environment and outputs to the host terminal.
 
 ### 2.2 Assumptions
 - A-01: Input ELF32 binaries are assumed to be correctly compiled for the RV32I ISA.
