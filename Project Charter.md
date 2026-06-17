@@ -19,13 +19,6 @@ type (R, I, S, B, U, J) in program execution.
 3. Document and record my design process — Maintain clear, ongoing documentation of design decisions, module interfaces, encountered bugs, and their resolutions — producing a reference
 that could help a future beginner replicate or build on this work.
 
-## Success Criteria
-1. Instruction correctness — All RV32I base integer instructions execute and produce correct results in simulation, verified against expected outputs defined in SystemVerilog testbenches.
-2. Pipeline functionality — All 5 stages (Fetch, Decode, Execute, Memory, Writeback) operate correctly in sequence, with hazard handling (data hazards, control hazards) producing correct
-results rather than corrupted or stale values.
-3. Waveform verification — GTKWave waveforms for each module clearly show expected signal behaviour at each clock cycle, serving as visual confirmation of correct operation.
-4. Modular design integrity — Each hardware module (ALU, register file, program counter, control unit, etc.) passes its own isolated testbench before being integrated into the full pipeline.
-
 ## Scope
 - Design and simulation of a 5-stage pipelined CPU in SystemVerilog supporting the RV32I base integer instruction set
 - Implementation of core modules: ALU, register file, program counter, instruction memory, data memory, and control unit
@@ -34,7 +27,14 @@ results rather than corrupted or stale values.
 - Waveform analysis using GTKWave
 - Documentation of design decisions, module interfaces, and bug resolutions
 
-## Non-Goals
+## Success Criteria
+1. Instruction correctness — All RV32I base integer instructions execute and produce correct results in simulation, verified against expected outputs defined in SystemVerilog testbenches.
+2. Pipeline functionality — All 5 stages (Fetch, Decode, Execute, Memory, Writeback) operate correctly in sequence, with hazard handling (data hazards, control hazards) producing correct
+results rather than corrupted or stale values.
+3. Waveform verification — GTKWave waveforms for each module clearly show expected signal behaviour at each clock cycle, serving as visual confirmation of correct operation.
+4. Modular design integrity — Each hardware module (ALU, register file, program counter, control unit, etc.) passes its own isolated testbench before being integrated into the full pipeline.
+
+## Non-Goals & Future Improvements
 - Physical synthesis or FPGA deployment
 - Support for RISC-V extensions beyond RV32I (e.g. M, F, C extensions)
 - An operating system, assembler, or toolchain built on top of the CPU
