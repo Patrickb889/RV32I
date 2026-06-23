@@ -16,7 +16,8 @@ learning project in digital hardware design.
 | Module | Status | Description |
 |--------|--------|-------------|
 | ALU    | ✅ Done | 16-operation ALU with zero, negative, carry, overflow flags |
-| ...    | 🚧 WIP  | |
+| Registers    | ✅ Done | 2R1W register file with synchronous writes, combinational reads, and hardwired x0 |
+| Instruction Memory | 🚧 WIP  | Read-only instruction memory module |
 
 ## Tools
 - **OS:** Ubuntu (WSL2)
