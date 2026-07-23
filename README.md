@@ -17,7 +17,10 @@ learning project in digital hardware design.
 |--------|--------|-------------|
 | ALU    | ✅ Done | 16-operation ALU with zero, negative, carry, overflow flags |
 | Registers    | ✅ Done | 2R1W register file with synchronous writes, combinational reads, and hardwired x0 |
-| Instruction Memory | 🚧 WIP  | Read-only instruction memory module |
+| Instruction Memory | ✅ Done  | Read-only instruction memory module |
+| Data Memory | ✅ Done  | Byte-addressable data memory |
+| Decoder | ✅ Done  | Instruction decoder for all RV32I formats (R, I, S, B, U, J) |
+| Single cycle CPU | 🚧 WIP  | Top-level integration of ALU, register file, instruction memory, data memory, and decoder into a functional single-cycle datapath |
 
 ## Tools
 - **OS:** Ubuntu (WSL2)
