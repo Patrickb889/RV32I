@@ -1,4 +1,3 @@
-# files.f
 sv_alu/alu.sv
 sv_register/register.sv
 sv_iMem/iMem.sv
