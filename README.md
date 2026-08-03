@@ -20,7 +20,8 @@ learning project in digital hardware design.
 | Instruction Memory | ✅ Done  | Read-only instruction memory module |
 | Data Memory | ✅ Done  | Byte-addressable data memory |
 | Decoder | ✅ Done  | Instruction decoder for all RV32I formats (R, I, S, B, U, J) |
-| Single cycle CPU | 🚧 WIP  | Top-level integration of ALU, register file, instruction memory, data memory, and decoder into a functional single-cycle datapath |
+| Single cycle CPU | ✅ Done  | Top-level integration of ALU, register file, instruction memory, data memory, and decoder into a functional single-cycle datapath |
+| Pipelined CPU | 🚧 WIP  | 5-stage pipelined RV32I datapath with hazard detection, data forwarding, and branch handling to resolve structural, data, and control hazards |
 
 ## Tools
 - **OS:** Ubuntu (WSL2)
