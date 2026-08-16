@@ -1,0 +1,13 @@
+sv_cpuTopPipelined/cputopPipelined_tb.sv
+sv_cpuTopPipelined/cpuTopPipelined.sv
+sv_cpuTopPipelined/IfIdReg.sv
+sv_cpuTopPipelined/IdExReg.sv
+sv_cpuTopPipelined/ExMemReg.sv
+sv_cpuTopPipelined/MemWbReg.sv
+sv_cpuTopPipelined/hazardUnit.sv
+sv_cpuTopPipelined/forwardUnit.sv
+sv_alu/alu.sv
+sv_decoder/decoder.sv
+sv_register/register.sv
+sv_iMem/iMem.sv
+sv_dMem/dMem.sv

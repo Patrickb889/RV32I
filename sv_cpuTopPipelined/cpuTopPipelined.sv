@@ -109,14 +109,12 @@ module cpuTopPipelined #(
     // ID-stage forwarding (branch/JALR operands only)
     //-----------------------------------------------------------------
     logic [1:0]  forwardAD, forwardBD;
-    logic [31:0] aluResultE; // forward source, defined down in EX
- 
     logic [31:0] rs1DataDFwd, rs2DataDFwd;
- 
-    assign rs1DataDFwd = (forwardAD == 2'b01) ? aluResultE :
+
+    assign rs1DataDFwd = (forwardAD == 2'b01) ? aluResultM :
                           (forwardAD == 2'b10) ? resultW    : rs1DataD;
- 
-    assign rs2DataDFwd = (forwardBD == 2'b01) ? aluResultE :
+
+    assign rs2DataDFwd = (forwardBD == 2'b01) ? aluResultM :
                           (forwardBD == 2'b10) ? resultW    : rs2DataD;
  
     //-----------------------------------------------------------------
@@ -199,8 +197,8 @@ module cpuTopPipelined #(
  
         .pcIn       (pcD),
         .pcPlus4In  (pcPlus4D),
-        .rs1DataIn  (rs1DataD),
-        .rs2DataIn  (rs2DataD),
+        .rs1DataIn  (rs1DataDFwd),
+        .rs2DataIn  (rs2DataDFwd),
         .rs1AddrIn  (rs1AddrD),
         .rs2AddrIn  (rs2AddrD),
         .rdAddrIn   (rdAddrD),
@@ -262,7 +260,7 @@ module cpuTopPipelined #(
     assign rs2DataEFwd = (forwardBE == 2'b10) ? aluResultM :
                           (forwardBE == 2'b01) ? resultW    : rs2DataE;
  
-    logic [31:0] srcA, srcB;
+    logic [31:0] srcA, srcB, aluResultE;
     logic        aluZeroE, aluNegativeE, aluOverflowE, aluCarryE;
  
     assign srcA = opASelE ? pcE     : rs1DataEFwd; // AUIPC uses PC as operand A
