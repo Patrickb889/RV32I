@@ -4,7 +4,7 @@ A RISC-V RV32I CPU core implemented in SystemVerilog, built from scratch as a
 learning project in digital hardware design.
 
 ## Project Status
-🚧 Work in progress
+✅ Complete
 
 ## Architecture
 - **ISA:** RISC-V RV32I (base integer instruction set)
